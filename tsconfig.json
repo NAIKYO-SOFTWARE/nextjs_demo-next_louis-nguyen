@@ -32,7 +32,7 @@
         "**/*.ts",
         "**/*.tsx",
         ".next/types/**/*.ts",
-        "__test__/.test.ts",
+        "src/app/__test__/.test.ts",
         "jest.config.js"
     ],
     "exclude": [

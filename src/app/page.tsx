@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import HomePage from './home/page';
+import Open from './open/page';
 
 export default function Home() {
-    return <HomePage />;
+    return <Open />;
 }
