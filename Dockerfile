@@ -21,12 +21,13 @@ WORKDIR /usr/src/app
 FROM base as deps
 
 # Download dependencies as a separate step to take advantage of Docker's caching.
-# Leverage a cache mount to /root/.npm to speed up subsequent builds.
-# Leverage bind mounts to package.json and package-lock.json to avoid having to copy them
+# Leverage a cache mount to /root/.yarn to speed up subsequent builds.
+# Leverage bind mounts to package.json and yarn.lock to avoid having to copy them
 # into this layer.
-COPY package.json package-log.json
-
-RUN npm install
+RUN --mount=type=bind,source=package.json,target=package.json \
+    --mount=type=bind,source=yarn.lock,target=yarn.lock \
+    --mount=type=cache,target=/root/.yarn \
+    yarn install --production --frozen-lockfile
 
 ################################################################################
 # Create a stage for building the application.
@@ -34,12 +35,15 @@ FROM deps as build
 
 # Download additional development dependencies before building, as some projects require
 # "devDependencies" to be installed to build. If you don't need this, remove this step.
-RUN npm install
+RUN --mount=type=bind,source=package.json,target=package.json \
+    --mount=type=bind,source=yarn.lock,target=yarn.lock \
+    --mount=type=cache,target=/root/.yarn \
+    yarn install --frozen-lockfile
 
 # Copy the rest of the source files into the image.
 COPY . .
 # Run the build script.
-RUN npm run build
+RUN yarn run build
 
 ################################################################################
 # Create a new stage to run the application with minimal runtime dependencies
@@ -65,4 +69,4 @@ COPY --from=build /usr/src/app/.next ./.next
 EXPOSE 3000
 
 # Run the application.
-CMD npm run start
+CMD yarn start
