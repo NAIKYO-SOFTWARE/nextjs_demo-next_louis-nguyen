@@ -1,16 +1,21 @@
 'use client';
 import { useRouter } from 'next/navigation';
+import { useDispatch } from 'react-redux';
+import Image from 'next/image';
+import { getsubmitlogin } from '@/redux/formSlice';
 import classNames from 'classnames/bind';
 import styles from './Login.module.scss';
 import CircleButton from '@/components/CircleButton';
 import Input from '@/components/Input';
 import Button from '@/components/Button';
 import Or from '../../components/Or';
+import Footer from '@/components/Layout/Footer';
 import { useState } from 'react';
 const cx = classNames.bind(styles);
 
 function Login() {
     const router = useRouter();
+    const dispatch = useDispatch();
     const [valueForm, setValueForm] = useState({
         email: '',
         password: '',
@@ -25,7 +30,8 @@ function Login() {
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        router.push('/contract');
+        dispatch(getsubmitlogin(valueForm));
+        // router.push('/contract');
     };
 
     return (
@@ -40,13 +46,14 @@ function Login() {
             <div>
                 <div className={cx('con-circle-button')}>
                     <CircleButton>
-                        <img src="/images/facebook.png" alt="" />
+                        <img src="/images/facebook.png" />
+                        {/* <Image src="/images/facebook.png" alt="Facebook" width={120} height={40} /> */}
                     </CircleButton>
                     <CircleButton>
-                        <img src="/images/google.png" alt="" />
+                        <img src="/images/google.png" />
                     </CircleButton>
                     <CircleButton>
-                        <img src="/images/apple.png" alt="" />
+                        <img src="/images/apple.png" />
                     </CircleButton>
                 </div>
             </div>
@@ -78,6 +85,9 @@ function Login() {
                     </Button>
                 </div>
             </form>
+            <div>
+                <Footer />
+            </div>
         </div>
     );
 }
