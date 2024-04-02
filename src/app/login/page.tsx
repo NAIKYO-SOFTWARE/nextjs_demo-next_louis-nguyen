@@ -46,8 +46,8 @@ function Login() {
             <div>
                 <div className={cx('con-circle-button')}>
                     <CircleButton>
-                        <img src="/images/facebook.png" />
-                        {/* <Image src="/images/facebook.png" alt="Facebook" width={120} height={40} /> */}
+                        {/* <img src="/images/facebook.png" /> */}
+                        <Image src="/images/facebook.png" alt="Facebook" width={120} height={40} />
                     </CircleButton>
                     <CircleButton>
                         <img src="/images/google.png" />
