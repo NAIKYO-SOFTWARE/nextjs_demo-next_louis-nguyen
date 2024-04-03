@@ -1,34 +1,33 @@
 .wrapper {
-  padding: 20px 30px;
-  height: 100%;
-  background: linear-gradient(to right, #f3c4fb, #bde0fe, #f3c4fb);
+    padding: 20px 30px;
+    height: 100%;
+    background: linear-gradient(to right, #f3c4fb, #bde0fe, #f3c4fb);
 }
 
 .header-wrapper {
-  padding: 40px 0px;
+    padding: 40px 0px;
 }
 .text-header {
-  font-size: 60px;
-  font-weight: 96px;
-  padding-bottom: 20px;
+    font-size: 60px;
+    font-weight: 96px;
 }
 .con-button {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 .con-create {
-  display: flex;
-  justify-content: center;
-  padding: 10px 0px;
-  a {
-    color: rgb(66, 66, 66);
-  }
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+    a {
+        color: rgb(66, 66, 66);
+    }
 }
 .add-or {
-  margin: 20px 0px;
+    margin: 20px 0px;
 }
 .con-circle-button {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }

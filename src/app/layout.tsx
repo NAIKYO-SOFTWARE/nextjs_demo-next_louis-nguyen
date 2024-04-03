@@ -21,7 +21,7 @@ export default function RootLayout({
             <ThemeProvider theme={theme}>
                 <html lang="en">
                     <body className={inter.className}>
-                        <div style={{ height: '750px' }}>{children}</div>
+                        <div style={{ height: '776px' }}>{children}</div>
                     </body>
                 </html>
             </ThemeProvider>
