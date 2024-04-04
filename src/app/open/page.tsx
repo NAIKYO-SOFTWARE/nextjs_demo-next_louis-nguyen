@@ -32,13 +32,13 @@ function Open() {
                 <Or />
             </div>
             <div className={cx('con-circle-button')}>
-                <CircleButton>
+                <CircleButton className="cover-button">
                     <img src="/images/facebook.png" alt="" />
                 </CircleButton>
-                <CircleButton>
+                <CircleButton className="cover-button">
                     <img src="/images/google.png" alt="" />
                 </CircleButton>
-                <CircleButton>
+                <CircleButton className="cover-button">
                     <img src="/images/apple.png" alt="" />
                 </CircleButton>
             </div>

@@ -7,15 +7,15 @@ interface IProps {
     className?: string;
     href?: string;
     type?: string;
-    handleClick?: any;
+    onClick?: any;
 }
-function Button({ children, handleClick, className, href }: IProps) {
+function Button({ children, onClick, className, href }: IProps) {
     return href ? (
         <Link className={cx(`${className}`)} href={`${href}`}>
             {children}
         </Link>
     ) : (
-        <button onClick={handleClick} className={cx(`${className}`)}>
+        <button onClick={onClick} className={cx(`${className}`)}>
             {children}
         </button>
     );

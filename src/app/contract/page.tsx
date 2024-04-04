@@ -3,7 +3,7 @@ import Footer from '@/components/Layout/Footer';
 function Contract() {
     return (
         <>
-            <div className="bg-[#F5F5F5] h-[85%] p-10">
+            <div className="bg-[#F5F5F5] h-[90%] p-10">
                 <div className="mt-3">
                     <div className="text-2xl font-bold">Let’s make a contract</div>
                 </div>

@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import formReducer from './formSlice';
+import addTask from './taskSlice';
 // import mySaga from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
@@ -9,6 +10,7 @@ const middleware = [sagaMiddleware];
 export const store = configureStore({
     reducer: {
         formlogin: formReducer,
+        addtask: addTask,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(middleware),
 });

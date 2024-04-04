@@ -8,17 +8,17 @@ function Footer() {
         <div className={cx('wrapper')}>
             <div className={cx('con-footer')}>
                 <div>
-                    <CircleButton>
+                    <CircleButton className="cover-button">
                         <Image src={'/images/footer/calendar_month.png'} alt="calendar" width={24} height={24} />
                     </CircleButton>
                 </div>
                 <div style={{ padding: '0px 30px' }}>
-                    <CircleButton>
+                    <CircleButton href="/home" className="cover-button">
                         <Image src={'/images/footer/checklist.png'} alt="calendar" width={24} height={24} />
                     </CircleButton>
                 </div>
                 <div>
-                    <CircleButton>
+                    <CircleButton className="cover-button">
                         <Image src={'/images/footer/person.png'} alt="calendar" width={24} height={24} />
                     </CircleButton>
                 </div>
