@@ -6,7 +6,7 @@ interface IProps {
     children?: React.ReactNode;
     href?: string;
     className?: string;
-    onClick: () => void;
+    onClick?: () => void;
 }
 function CircleButton({ children, onClick, href, className }: IProps) {
     return href ? (

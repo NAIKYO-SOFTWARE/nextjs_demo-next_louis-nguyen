@@ -5,7 +5,7 @@ export interface CounterState {
     taskName: string;
     color: string;
 }
-const initialState: CounterState[] = [{ taskName: '', color: '' }];
+const initialState: CounterState[] = [];
 
 export const taskSlice = createSlice({
     name: 'task',
